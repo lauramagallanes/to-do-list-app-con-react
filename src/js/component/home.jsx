@@ -43,20 +43,24 @@ function eliminarTareas(id) {
 }
 //finaliza funcion de eliminar tareas
 	return (
-		<div>
+		<div className="col-12 h-100" style={{background:'#ffde59'}} >
 			<h1>TODOS</h1>
-			
-			<div className="container d-flex justify-content-center text-center">
+			<div  style={{background: "url(https://res.cloudinary.com/dgqyqqtk4/image/upload/v1673441926/samples/fondo_todo_list_vhfldn.png)", height:"1000px", width:"1000px", margin:'auto'}}>
+
+			<div className="container d-flex justify-content-center text-center bg-transparent">
 				<input className="form-control w-50" type="text" placeholder="Tareas" aria-label="Disabled input example" value={tarea} onChange={(e) => setTarea(e.target.value)} onKeyDown={insertarTareas} required/>
 			</div>
-			<div className="container d-flex justify-content-center text-left">
-				<ul className="list-group w-50">
+			<div className="container d-flex justify-content-center text-left bg-transparent" style={{marginTop:'100px'}}>
+				<ul className="list-group list-group-flush w-50 bg-transparent">
 					
-					{listaTareas.map((item, id) => <li className="list-group-item" key={id}>{item}<button type="button" className="btn btn-info float-end nuevoBoton" onClick={() => eliminarTareas(id)}>X</button> </li>)}
+					{listaTareas.map((item, id) => <li className="list-group-item bg-transparent" key={id}>{item}<button type="button" className="btn btn-info float-end nuevoBoton bg-transparent" onClick={() => eliminarTareas(id)}>X</button> </li>)}
 					
 				</ul>
 
 			</div>
+			</div>
+			
+			
 		</div>
 	);
 };
